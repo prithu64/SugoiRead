@@ -13,7 +13,7 @@ function Navbar() {
         <div className="flex items-center justify-between max-w-2xl text-sm mx-auto">  
       <div>
         {
-            isDark === "dark" ?<img src="/sugoiDarkk.png" className="md:h-[100px] md:w-[100px] h-[70px] w-[70px]"/> :<img src="/sugoiLightt.png" className="h-[70px] w-[70px] md:h-[100px] md:w-[100px]"/>
+            isDark === "dark" ?<img src="/sugoiDarkk.png" alt="/logo" className="md:h-[100px] md:w-[100px] h-[70px] w-[70px]"/> :<img src="/sugoiLightt.png" className="h-[70px] w-[70px] md:h-[100px] md:w-[100px]" alt="/logo"/>
         }
       </div>  
 
