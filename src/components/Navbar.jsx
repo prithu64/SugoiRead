@@ -9,26 +9,29 @@ function Navbar() {
  const {isDark,setIsDark} = useContext(DarkTheme);
 
   return (
-    <div className="flex items-center justify-between max-w-3xl mx-auto">  
+    <div className="px-4">
+        <div className="flex items-center justify-between max-w-2xl text-sm mx-auto">  
       <div>
         {
-            isDark === "dark" ?<img src="/sugoiDarkk.png" className="h-[100px] w-[100px]"/> :<img src="/sugoiLightt.png" className="h-[100px] w-[100px]"/>
+            isDark === "dark" ?<img src="/sugoiDarkk.png" className="md:h-[100px] md:w-[100px] h-[80px] w-[80px]"/> :<img src="/sugoiLightt.png" className="h-[80px] w-[80px] md:h-[100px] md:w-[100px]"/>
         }
       </div>  
 
-      <div className="space-x-6">
-        <button onClick={()=>navigate("/")} className="border px-2 py-1 rounded-sm">Home</button>
-        <button onClick={()=>navigate("/manga")}  className="border px-2 py-1 rounded-sm">Manga</button>  
+      <div className="flex gap-x-2">
+        <button onClick={()=>navigate("/")} className="text-white px-2 py-1 rounded-sm bg-orange-600 font-semibold dark:border-2 ">Home</button>
+        <button onClick={()=>navigate("/manga")}  className="text-white px-2 py-1 rounded-sm bg-orange-600 font-semibold dark:border-2">Manga</button>  
       </div>      
 
       <div>
         <button>
             {
-                isDark === 'dark'?<FaMoon onClick={()=>{setIsDark("")}} size={20} />:<MdWbSunny onClick={()=>{setIsDark("dark")}} size={20}/>
+                isDark === 'dark'?<FaMoon onClick={()=>{setIsDark("")}} size={25} />:<MdWbSunny onClick={()=>{setIsDark("dark")}} size={25}/>
             }
         </button>
       </div>   
     </div>
+    </div>
+   
   )
 }
 
