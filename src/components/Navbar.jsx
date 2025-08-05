@@ -13,19 +13,23 @@ function Navbar() {
         <div className="flex items-center justify-between max-w-2xl text-sm mx-auto">  
       <div>
         {
-            isDark === "dark" ?<img src="/sugoiDarkk.png" className="md:h-[100px] md:w-[100px] h-[80px] w-[80px]"/> :<img src="/sugoiLightt.png" className="h-[80px] w-[80px] md:h-[100px] md:w-[100px]"/>
+            isDark === "dark" ?<img src="/sugoiDarkk.png" className="md:h-[100px] md:w-[100px] h-[70px] w-[70px]"/> :<img src="/sugoiLightt.png" className="h-[70px] w-[70px] md:h-[100px] md:w-[100px]"/>
         }
       </div>  
 
-      <div className="flex gap-x-2">
-        <button onClick={()=>navigate("/")} className="text-white px-2 py-1 rounded-sm bg-orange-600 font-semibold dark:border-2 ">Home</button>
-        <button onClick={()=>navigate("/manga")}  className="text-white px-2 py-1 rounded-sm bg-orange-600 font-semibold dark:border-2">Manga</button>  
+      <div className="flex gap-4">
+        <button onClick={()=>navigate("/")} className="md:text-sm text-xs font-semibold cursor-pointer transition-all bg-orange-500 text-white px-6 py-2 rounded-lg  border-orange-600 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
+                Home
+        </button>
+        <button onClick={()=>navigate("/manga")}  className="md:text-sm text-xs font-semibold cursor-pointer transition-all bg-orange-500 text-white px-6 py-2 rounded-lg border-orange-600 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
+                Manga
+        </button> 
       </div>      
 
       <div>
-        <button>
+        <button className="rounded-full border p-2 dark:border-gray-50/30 border-gray-800/70">
             {
-                isDark === 'dark'?<FaMoon onClick={()=>{setIsDark("")}} size={25} />:<MdWbSunny onClick={()=>{setIsDark("dark")}} size={25}/>
+                isDark === 'dark'?<FaMoon onClick={()=>{setIsDark("")}} size={20} />:<MdWbSunny onClick={()=>{setIsDark("dark")}} size={20}/>
             }
         </button>
       </div>   
