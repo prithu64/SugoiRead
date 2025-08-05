@@ -1,8 +1,6 @@
-import React from 'react'
-
 function Manga() {
   return (
-    <div>Manga</div>
+    <div className='flex justify-center items-center '>Manga</div>
   )
 }
 

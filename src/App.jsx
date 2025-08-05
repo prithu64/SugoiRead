@@ -1,20 +1,28 @@
 import './App.css'
-import {BrowserRouter, Route, Routes} from "react-router-dom"
+import { BrowserRouter, Route, Routes} from "react-router-dom"
 import Home from './pages/Home'
 import Manga from './pages/Manga'
+import { useState } from 'react'
+import Navbar from './components/Navbar'
+import { DarkTheme } from './context/DarkTheme'
 
 function App() {
-
-
+  const [isDark,setIsDark] = useState("dark")
   return (
-    <>
-     <BrowserRouter>
-        <Routes>
-           <Route path='/home' element={<Home/>} />
-           <Route path='/manga' element={<Manga/>}/>
+ <>
+ <DarkTheme.Provider value={{isDark,setIsDark}}>
+   <div className={`${isDark} dark:bg-black/90 dark:text-white`}>
+      <BrowserRouter>
+       <Navbar/>
+       <Routes>
+           <Route path='/' element={<Home/>} />
+           <Route path='/manga' element={<Manga/>} />
         </Routes>
-     </BrowserRouter>
-    </>
+      </BrowserRouter>
+    </div>   
+ </DarkTheme.Provider>
+     
+ </>
   )
 }
 
