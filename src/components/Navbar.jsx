@@ -9,7 +9,7 @@ function Navbar() {
  const {isDark,setIsDark} = useContext(DarkTheme);
 
   return (
-    <div className="px-4">
+    <div className="px-4 z-50 bg-transparent">
         <div className="flex items-center justify-between max-w-2xl text-sm mx-auto">  
       <div>
         {
