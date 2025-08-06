@@ -27,7 +27,7 @@ function Navbar() {
       </div>      
 
       <div>
-        <button className="rounded-full border p-2 dark:border-gray-50/30 border-gray-800/70">
+        <button className="rounded-full border p-2 dark:border-gray-50/30 border-gray-800/90 cursor-pointer">
             {
                 isDark === 'dark'?<FaMoon onClick={()=>{setIsDark("")}} size={20} />:<MdWbSunny onClick={()=>{setIsDark("dark")}} size={20}/>
             }
