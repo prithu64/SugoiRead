@@ -1,19 +1,14 @@
-import React from 'react'
-
 function Intro() {
   return (
-     <section className="w-full flex flex-col justify-center items-center text-center px-4 sm:px-6 py-10">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-[Bangers] text-white drop-shadow-md">
-                Welcome to SugoiRead
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-gray-200 mt-4 max-w-md sm:max-w-lg">
-                Discover your next favorite manga from our curated collection.
-              </p>
-              <button className="mt-6 bg-pink-600 hover:bg-pink-700 text-white px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-base sm:text-lg shadow-md hover:scale-105 transition-all">
-                Browse Manga
-              </button>
-      </section>
-  )
+
+    <section className="flex text-white flex-col justify-center items-center text-center w-full bg-[url(/narutoBg.png)] bg-cover bg-center bg-start  bg-blend-multiply bg-black/50 h-[500px] sm:h-[500px] xs:h-[300px] px-2">
+    <h1 className="text-5xl  font-semibold">Welcome to SugoiRead</h1>
+    <p className="text-base font-semibold sm:text-lg md:text-xl text-gray-200 mt-4 max-w-md sm:max-w-lg">
+      This is a must read manga list . You won't regret this .
+    </p>
+    </section>
+
+  );
 }
 
-export default Intro
+export default Intro;
