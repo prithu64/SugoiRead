@@ -7,8 +7,8 @@ import IntroTwo from '../components/sections/IntroTwo';
 function Home() {
   return (
     <div className="flex justify-center items-center py-16 px-4 md:px-20  ">
-      <div className="w-full max-w-5xl text-center shadow-2xl rounded-2xl overflow-hidden shadow-gray-500">
-        <Swiper
+      <div className="w-full max-w-6xl text-center  shadow-2xl rounded-2xl overflow-hidden shadow-gray-500">
+        <Swiper  
           modules={[Autoplay]}
           autoplay={{
             delay: 6000,
