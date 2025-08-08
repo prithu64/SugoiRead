@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <div className="px-4 z-50 bg-transparent">
         <div className="flex items-center justify-between max-w-2xl text-sm mx-auto">  
-      <div>
+      <div className="hover:scale-105 transition duration-300">
         {
             isDark === "dark" ?<img src="/sugoiDarkk.png" alt="/logo" className="md:h-[100px] md:w-[100px] h-[70px] w-[70px]"/> :<img src="/sugoiLightt.png" className="h-[70px] w-[70px] md:h-[100px] md:w-[100px]" alt="/logo"/>
         }
@@ -27,7 +27,7 @@ function Navbar() {
       </div>      
 
       <div>
-        <button className="rounded-full border p-2 dark:border-gray-50/30 border-gray-800/90 cursor-pointer">
+        <button className="rounded-full border p-2 dark:border-gray-50/30 border-gray-800/90 cursor-pointer hover:scale-105 transition duration-300">
             {
                 isDark === 'dark'?<FaMoon onClick={()=>{setIsDark("")}} size={20} />:<MdWbSunny onClick={()=>{setIsDark("dark")}} size={20}/>
             }

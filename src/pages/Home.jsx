@@ -25,14 +25,15 @@ function Home() {
           <SwiperSlide>
            <Intro/>
           </SwiperSlide>
-
+          
           <SwiperSlide>
            <IntroTwo/>
           </SwiperSlide>
-          
+
           <SwiperSlide>
            <IntroThree/>
           </SwiperSlide>
+          
 
         </Swiper>
       </div>

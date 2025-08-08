@@ -5,6 +5,7 @@ import Manga from './pages/Manga'
 import { useState } from 'react'
 import Navbar from './components/Navbar'
 import { DarkTheme } from './context/DarkTheme'
+import Footer from './components/Footer'
 
 function App() {
   const [isDark,setIsDark] = useState("dark")
@@ -18,6 +19,7 @@ function App() {
            <Route path='/' element={<Home/>} />
            <Route path='/manga' element={<Manga/>} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>   
  </DarkTheme.Provider>
