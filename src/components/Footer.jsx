@@ -8,9 +8,8 @@ function Footer() {
          <img src= "/footergif.gif" className="h-[40px] w-[40px]" />
         <div >
            <a
-             href=""
+             href="https://github.com/prithu64/SugoiRead"
              target="_blank"
-             rel="noopener noreferrer"
              className="underline ml-2 italic"
            >
             ⭐ smash this Repo
