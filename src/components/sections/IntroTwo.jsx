@@ -4,7 +4,7 @@ import { FaTrophy } from "react-icons/fa";
 
 function IntroTwo() {
   return (
-    <section className="relative w-full h-[500px] sm:h-[500px] xs:h-[300px] flex justify-center items-center overflow- px-2 text-white">
+    <section className="relative w-full h-[600px] sm:h-[500px] xs:h-[300px] flex justify-center items-center overflow- px-1 text-white">
      
       <video
         className="absolute top-0 left-0 w-full h-full object-cover z-0"

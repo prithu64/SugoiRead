@@ -4,7 +4,7 @@ function Intro() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative flex text-white flex-col justify-center items-center text-center w-full h-[500px] sm:h-[500px] xs:h-[300px] px-2 overflow-hidden">
+    <section className="relative flex text-white flex-col justify-center items-center text-center w-full h-[600px] sm:h-[500px] xs:h-[300px] px-1 overflow-hidden">
       
       {/* Background Video */}
       <video

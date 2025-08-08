@@ -7,7 +7,7 @@ import IntroThree from '../components/sections/IntroThree';
 
 function Home() {
   return (
-    <div className="flex justify-center items-center py-16 px-4 md:px-20  ">
+    <div className="flex justify-center items-center  px-4 md:px-20 my-5">
       <div className="w-full max-w-6xl text-center  shadow-2xl rounded-2xl overflow-hidden shadow-gray-800 dark:shadow-gray-500">
         <Swiper  
           modules={[Autoplay]}
@@ -27,11 +27,11 @@ function Home() {
           </SwiperSlide>
 
           <SwiperSlide>
-            <IntroTwo />
+           <IntroTwo/>
           </SwiperSlide>
-
+          
           <SwiperSlide>
-            <IntroThree/>
+           <IntroThree/>
           </SwiperSlide>
 
         </Swiper>
