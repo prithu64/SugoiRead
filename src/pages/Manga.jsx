@@ -26,11 +26,11 @@ function Manga() {
         
      </div>
 
-     <div className="flex gap-x-4">
+     <div className="flex gap-x-4 z-10">
          {
           visibleManga<mangaData.length &&(
             <div>
-              <button className="flex justify-center mt-10 border p-1 w-[100px] rounded-md text-xs" onClick={loadManga}>
+              <button className="mt-10 px-4 py-2 bg-orange-500 text-xs font-semibold text-white rounded-full shadow-md hover:bg-orange-600 hover:scale-105 transition-all border-b-[4px] border-orange-700" onClick={loadManga}>
                Show More
              </button> 
             </div> 
@@ -38,7 +38,7 @@ function Manga() {
         }
          {
               visibleManga > 4 && (
-                <button onClick={hideManga} className="flex justify-center mt-10 border p-1 w-[100px] rounded-md text-xs" >
+                <button onClick={hideManga}  className="mt-10 px-4 py-2 text-xs font-semibold bg-gray-700 text-white rounded-full shadow-md hover:bg-gray-800 hover:scale-105 border-b-[4px] border-orange-700 transition-all" >
                   Show less
                 </button>
               )
