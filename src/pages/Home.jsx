@@ -22,7 +22,15 @@ function Home() {
           spaceBetween={50}
           slidesPerView={1}
         >
-         
+           
+           <SwiperSlide>
+           <Intro/>
+          </SwiperSlide>
+
+          <SwiperSlide>
+           <IntroTwo/>
+          </SwiperSlide>
+
           <SwiperSlide>
            <IntroThree/>
           </SwiperSlide>
