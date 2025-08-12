@@ -46,9 +46,9 @@ function MangaPage() {
            </div>
         </div>
          
-         <div className= "flex flex-col max-w-4xl w-full">
+         <div className= "flex flex-col max-w-4xl w-full ">
            <div className="dark:text-white/85 mb-5">Reviews : </div>
-           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 space-x-4">
+           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 space-x-4 mx-auto">
               {
                 mangaReviews.slice(0,visible).map((comment)=>{
                   return(
