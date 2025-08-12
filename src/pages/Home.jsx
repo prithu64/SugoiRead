@@ -16,7 +16,7 @@ function Home() {
         <Swiper  
           modules={[Autoplay]}
           autoplay={{
-            delay: 10000,
+            delay: 6000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
