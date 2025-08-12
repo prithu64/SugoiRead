@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
 import { BiSolidBookAdd } from "react-icons/bi";
-import SuggestModal from '../SuggestModal';
 
-function IntroThree() {
-  const [modal ,setModal] = useState(false)
+function IntroThree({setModal}) {
+  
   return (
     <section className='relative flex w-full h-[550px] sm:h-[500px] xs:h-[300px] justify-center items-center text-white overflow-hidden px-1'>
 
@@ -27,7 +25,7 @@ function IntroThree() {
            </div>
         </div>
 
-        <SuggestModal modal={modal} setModal={setModal}/>
+        
 
     </section>
   )
