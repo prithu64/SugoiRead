@@ -45,6 +45,7 @@ function Home() {
         </Swiper>
         
       </div>
+      <SuggestModal modal={modal} setModal={setModal} />
     </div>
   );
 }

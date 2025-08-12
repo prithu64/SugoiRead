@@ -13,14 +13,14 @@ function App() {
   return (
  <>
  <DarkTheme.Provider value={{isDark,setIsDark}}>
-   <div className={`${isDark} dark:bg-black/90 dark:text-white h-screen`}>
+   <div className={`${isDark} dark:bg-black/90 dark:text-white min-h-screen `}>
       <BrowserRouter>
        <Navbar/>
        <Routes>
            <Route path='/' element={<Home/>} />
            <Route path='/manga' element={<Manga/>} />
            <Route path='/mangapage/:id' element={<MangaPage/>} />
-        </Routes>
+       </Routes>
         <Footer/>
       </BrowserRouter>
     </div>   
