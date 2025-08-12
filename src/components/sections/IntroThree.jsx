@@ -6,7 +6,7 @@ function IntroThree({setModal}) {
     <section className='relative flex w-full h-[550px] sm:h-[500px] xs:h-[300px] justify-center items-center text-white overflow-hidden px-1'>
 
         {/*back bg*/}
-        <video className='absolute top-0 left-0 w-full h-full z-0 object-cover' src='/haikyuu.mp4'
+        <video className='absolute top-0 left-0 w-full h-full z-0 object-cover overflow-hidden' src='/haikyuu.mp4'
         loop
         autoPlay
         muted

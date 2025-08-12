@@ -8,7 +8,7 @@ function Intro() {
       
       {/* Background Video */}
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-0 "
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 overflow-hidden"
         src="/narutoEye.mp4"
         autoPlay
         muted
@@ -26,7 +26,7 @@ function Intro() {
           This is a must read manga list. You won't regret this.
         </p>
         <p className="text-sm italic font-semibold sm:text-lg md:text-xl text-gray-200 mt-4 max-w-md sm:max-w-lg">
-          Handpicked manga, real fan reviews, and hidden treasures – all in one place
+          Handpicked manga, real fan reviews, and hidden treasures all in one place
         </p>
         <button
           onClick={() => navigate("/manga")}

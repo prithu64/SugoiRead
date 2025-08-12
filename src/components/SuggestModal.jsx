@@ -1,6 +1,6 @@
 function SuggestModal({modal,setModal}) {
   return (
-    <div className={`${modal? "opacity-100 scale-100 pointer-events-auto":"opacity-0 pointer-events-none scale-95"} z-60 w-full h-full fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-black/50 trasnsition duration-300 ease-in-out` }>
+    <div className={`${modal? "opacity-100 scale-100 pointer-events-auto":"opacity-0 pointer-events-none scale-95"} z-60 w-full fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-black/50 trasnsition duration-300 ease-in-out` }>
       <div className="flex space-x-2 ">    
           <div className="flex flex-col space-y-5 border rounded-md p-4" >
              <div>

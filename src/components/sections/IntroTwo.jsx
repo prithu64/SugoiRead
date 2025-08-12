@@ -7,7 +7,7 @@ function IntroTwo() {
     <section className="relative w-full h-[550px] sm:h-[500px] xs:h-[300px] flex justify-center items-center overflow- px-1 text-white">
      
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 overflow-hidden"
         src="/luffy.mp4" 
         autoPlay
         muted

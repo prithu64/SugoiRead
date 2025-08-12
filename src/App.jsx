@@ -13,7 +13,7 @@ function App() {
   return (
  <>
  <DarkTheme.Provider value={{isDark,setIsDark}}>
-   <div className={`${isDark} dark:bg-black/90 dark:text-white max-h-screen`}>
+   <div className={`${isDark} dark:bg-black/90 dark:text-white h-screen`}>
       <BrowserRouter>
        <Navbar/>
        <Routes>

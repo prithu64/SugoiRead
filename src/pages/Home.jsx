@@ -11,7 +11,7 @@ import SuggestModal from '../components/SuggestModal';
 function Home() {
   const [modal ,setModal] = useState(false)
   return (
-    <div className="flex justify-center items-center  px-4 md:px-20 my-5">
+    <div className="flex justify-center items-center p-5 md:px-20 ">
       <div className="w-full max-w-6xl text-center  shadow-2xl rounded-2xl overflow-hidden shadow-gray-800 dark:shadow-gray-500">
         <Swiper  
           modules={[Autoplay]}
@@ -23,7 +23,7 @@ function Home() {
           simulateTouch={true}
           grabCursor={true}
           loop={true}
-          spaceBetween={50}
+          spaceBetween={0}
           slidesPerView={1}
           preventClicks={false}          
           preventClicksPropagation={false}
@@ -43,7 +43,7 @@ function Home() {
           
 
         </Swiper>
-        <SuggestModal modal={modal} setModal={setModal}/>
+        
       </div>
     </div>
   );
