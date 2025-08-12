@@ -1,9 +1,12 @@
 import { useState } from "react"
 import { mangaData } from "../../data/mangaData"
 import MangaCard from "../components/MangaCard"
+import { useNavigate } from "react-router-dom";
 
 function Manga() {
   const [visibleManga,setVisible] = useState(6);
+  const navigate = useNavigate();
+
   const loadManga = ()=>{
     setVisible((prev)=>prev+4);
   }
@@ -19,7 +22,7 @@ function Manga() {
         {
          mangaData.slice(0,visibleManga).map((manga)=>{
         return(
-            <MangaCard key={manga.id} src={manga.imageUrl} title={manga.title} />
+            <MangaCard key={manga.id} src={manga.imageUrl} title={manga.title} onClick={()=>{navigate(`/mangapage/${manga.id}`)}}/>
         )
       })
         }
