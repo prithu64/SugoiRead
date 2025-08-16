@@ -34,10 +34,10 @@ function MangaPage() {
 
              <div>⭐⭐⭐⭐⭐</div>
 
-             <div className="flex flex-col  max-w-lg w-full sm:max-w-xl md:max-w-2xl md:mt-10">
+             <div className="flex flex-col  max-w-lg w-full sm:max-w-xl md:max-w-2xl md:mt-14">
                <label  className="mb-2 font-bold dark:text-gray-200 text-sm sm:text-base" > Leave a review:  </label>
              <div className="flex border rounded-md overflow-hidden">
-               <textarea rows="1" className="px-3 py-3 border-r w-full y-resize"
+               <textarea rows="1" maxLength="100" className="px-3 py-3 border-r w-full y-resize"
                ></textarea>
               <button  className="py-1 px-6 bg-blue-600 text-white cursor-pointer">Submit</button>
             </div>
