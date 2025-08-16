@@ -3,10 +3,15 @@ import { mangaData } from "../../data/mangaData";
 import { mangaReviews } from "../../data/mangaReviews";
 import Comment from "../components/Comment";
 import { useState } from "react";
+import axios from "axios";
 
 function MangaPage() {
   const {id} = useParams();
   const [visible , setVisible] = useState(3)
+  const [submitStatus,setSubmitStatus] = useState(false);
+  const [successNotification,setSuccess] = useState(false);
+  const [errorNotification,setError] = useState(false)
+  const [review,setReview] = useState(null)
   const manga = mangaData.find(manga =>manga.id.toString()===id) //we do toString because id from param is a string 
 
   const showComments = ()=>{
@@ -15,6 +20,35 @@ function MangaPage() {
 
    const hideComments = ()=>{
     setVisible((prev)=>prev-3)
+  }
+
+  const handleSubmit = async()=>{
+    if(!review){
+      return alert("Input required")
+    }
+    setSubmitStatus(true)
+    try {
+    const response = await axios.post("http://localhost:3000/api/v1/comment/submitreview",{
+         mangaID : Number(id),
+         comment : review
+    })
+   setSubmitStatus(false)
+   
+    if(response.data.success){
+     setSuccess(true)
+    }else{
+     setError(true)
+    }
+    setTimeout(() => {
+      setSuccess(false)
+      setError(false)
+    }, 3000);
+
+    } catch (error) {
+     setSubmitStatus(false)
+      console.log("error : ",error)
+    }
+   
   }
 
   return (
@@ -35,11 +69,11 @@ function MangaPage() {
              <div>⭐⭐⭐⭐⭐</div>
 
              <div className="flex flex-col  max-w-lg w-full sm:max-w-xl md:max-w-2xl md:mt-14">
-               <label  className="mb-2 font-bold dark:text-gray-200 text-sm sm:text-base" > Leave a review:  </label>
+               <label  className="mb-2 font-bold dark:text-gray-200 text-sm sm:text-base" > Leave a anonymous review:  </label>
              <div className="flex border rounded-md overflow-hidden">
-               <textarea rows="1" maxLength="100" className="px-3 py-3 border-r w-full y-resize"
+               <textarea onChange={(e)=>setReview(e.target.value)} rows="1" maxLength="100" className="px-3 py-3 border-r w-full y-resize"
                ></textarea>
-              <button  className="py-1 px-6 bg-blue-600 text-white cursor-pointer">Submit</button>
+              <button onClick={handleSubmit} disabled={submitStatus}  className={`${submitStatus?"opacity-50 cursor-not-allowed":"cursor-pointer"} py-1 px-6 bg-blue-600 text-white `}>{submitStatus?"...":"Submit"}</button>
             </div>
             </div>
 
@@ -78,6 +112,12 @@ function MangaPage() {
 
          </div>
      
+        <div className={`absolute top-20  ${successNotification ? "opacity-100 scale-100 ":"opacity-0 scale-95 "} z-80 transition-transform duration-300 ease-in-out bg-white/40 backdrop-blur-sm  p-2 border dark:border-white rounded-md`}>
+          🎉Submission Successfull
+       </div>
+        <div className={`absolute top-20 ${errorNotification ? "opacity-100 scale-100":"opacity-0 scale-95"} transition-transform duration-300 ease-in-out `}>
+          🥲Error!!
+       </div>
 
     </div>
   )
