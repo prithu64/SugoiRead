@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom"
 import { mangaData } from "../../data/mangaData";
 import { mangaReviews } from "../../data/mangaReviews";
 import Comment from "../components/Comment";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 function MangaPage() {
@@ -12,6 +12,7 @@ function MangaPage() {
   const [successNotification,setSuccess] = useState(false);
   const [errorNotification,setError] = useState(false)
   const [review,setReview] = useState(null)
+  const [comments,setComments] = useState([])
   const manga = mangaData.find(manga =>manga.id.toString()===id) //we do toString because id from param is a string 
 
   const showComments = ()=>{
@@ -51,6 +52,24 @@ function MangaPage() {
    
   }
 
+ 
+
+useEffect(() => {
+  const fetchReviews = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/api/v1/comment/getreview/${Number(id)}`
+      );
+      setComments(response.data.comments)
+    } catch (error) {
+      console.error("Error fetching reviews:", error);
+    }
+  };
+
+  fetchReviews();
+}, [id]);
+
+
   return (
     <div className="flex flex-col justify-center items-center p-4 space-y-10">
 
@@ -82,19 +101,25 @@ function MangaPage() {
          
          <div className= "flex flex-col max-w-4xl w-full ">
            <div className="dark:text-white/85 mb-5">Reviews : </div>
-           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 space-x-4 mx-auto">
+           {
+            comments.length === 0 ? <div className="mx-auto dark:text-white/40 text-black/40">No reviews yet</div>:<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 space-x-4 mx-auto">
               {
-                mangaReviews.slice(0,visible).map((comment)=>{
+                comments.slice(0,visible).map((c,index)=>{
                   return(
-                    <Comment comment={comment}  />
+                    <div key={index}>
+                       <Comment  comment={c.comment}  />
+                    </div>
+                     
                   )
                 })
               }
            </div>
+           }
+           
 
            <div className=" flex w-[230px] mx-auto">
              {
-            visible < mangaReviews.length && (
+            visible < comments.length && (
               <div onClick={showComments} className=" underline mx-auto text-xs cursor-pointer">
                  More comments
               </div>
