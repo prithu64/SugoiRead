@@ -1,9 +1,9 @@
 import { Link, useParams } from "react-router-dom"
 import { mangaData } from "../../data/mangaData";
-import { mangaReviews } from "../../data/mangaReviews";
 import Comment from "../components/Comment";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { newReviews } from "../../data/newReviews";
 
 function MangaPage() {
   const {id} = useParams();
@@ -13,7 +13,7 @@ function MangaPage() {
   const [errorNotification,setError] = useState(false)
   const [review,setReview] = useState(null)
   const [comments,setComments] = useState([])
-  const manga = mangaData.find(manga =>manga.id.toString()===id) //we do toString because id from param is a string 
+  const manga = newReviews.find(manga =>manga.id.toString()===id) //we do toString because id from param is a string 
 
   const showComments = ()=>{
     setVisible((prev)=>prev+3)
@@ -74,20 +74,20 @@ useEffect(() => {
     <div className="flex flex-col justify-center items-center p-4 space-y-10">
 
         <div className="flex flex-col space-y-4 md:flex-row ">
-           <div className="border rounded-sm p-2 md:mr-5 mx-auto overflow-hidden shadow-2xl shadow-gray-500"><img src={manga.imageUrl} className="h-[300px] w-[200px] hover:scale-110 trasition duration-300 ease-in-out"/> 
+           <div className="border rounded-sm p-2 md:mr-5   mx-auto overflow-hidden shadow-2xl shadow-gray-500"><img src={manga.imageUrl} className="h-[300px] w-[200px] hover:scale-110 trasition duration-300 ease-in-out"/> 
            </div>
 
            <div className="space-y-4 ">
 
              <div className="text-4xl font-bold">{manga.title}</div>
 
-             <div>{manga.description}</div>
+             <div className="max-w-3xl">{manga.description}</div>
 
              <button className="border py-2 px-4 rounded-md cursor-pointer hover:scale-106 trasition duration-200 ease-in-out"><Link to={manga.chapterOneUrl} target="_blank">Start Reading</Link></button>
 
              <div>⭐⭐⭐⭐⭐</div>
 
-             <div className="flex flex-col  max-w-lg w-full sm:max-w-xl md:max-w-2xl md:mt-14">
+             <div className="flex flex-col  max-w-lg w-full sm:max-w-xl md:max-w-2xl md:mt-9">
                <label  className="mb-2 font-bold dark:text-gray-200 text-sm sm:text-base" > Leave a anonymous review:  </label>
              <div className="flex border rounded-md overflow-hidden">
                <textarea onChange={(e)=>setReview(e.target.value)} rows="1" maxLength="100" className="px-3 py-3 border-r w-full y-resize"

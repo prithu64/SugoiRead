@@ -1,9 +1,9 @@
 function MangaCard({src,title,key,onClick}) {
   return (
-    <div key={key} className="border dark:border-white/50 px-2 py-4 rounded-md shadow-2xl shadow-gray-600">
+    <div key={key} className="border dark:border-white/50 px-2 py-2 rounded-md shadow-2xl shadow-gray-600 w-[260px]">
         <div className="">
            <div className="overflow-hidden">
-              <img className="h-[300px] w-[240px] rounded-md  hover:scale-108 transition-transform duration-300 ease-in-out" src={src}/>
+              <img className="h-[300px] w-full  rounded-md hover:scale-108 transition-transform duration-300 ease-in-out" src={src}/>
            </div>
         </div>
         <div className="flex justify-between mt-3">

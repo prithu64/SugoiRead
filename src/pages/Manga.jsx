@@ -1,10 +1,10 @@
 import { useState } from "react"
-import { mangaData } from "../../data/mangaData"
 import MangaCard from "../components/MangaCard"
 import { useNavigate } from "react-router-dom";
+import {newReviews} from "../../data/newReviews"
 
 function Manga() {
-  const [visibleManga,setVisible] = useState(6);
+  const [visibleManga,setVisible] = useState(8);
   const navigate = useNavigate();
 
   const loadManga = ()=>{
@@ -16,11 +16,11 @@ function Manga() {
   }
 
   return (
-    <div className='flex flex-col justify-center items-center py-[15px]'>
+    <div className='flex flex-col justify-center items-center py-[15px] '>
   
-     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+     <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8">
         {
-         mangaData.slice(0,visibleManga).map((manga)=>{
+         newReviews.slice(0,visibleManga).map((manga)=>{
         return(
             <MangaCard key={manga.id} src={manga.imageUrl} title={manga.title} onClick={()=>{navigate(`/mangapage/${manga.id}`)}}/>
         )
@@ -31,7 +31,7 @@ function Manga() {
 
      <div className="flex gap-x-4 z-10">
          {
-          visibleManga<mangaData.length &&(
+          visibleManga<newReviews.length &&(
             <div>
               <button className="mt-10 px-4 py-2 bg-orange-500 text-xs font-semibold text-white rounded-full shadow-md hover:bg-orange-600 hover:scale-105 transition-all border-b-[4px] border-orange-700" onClick={loadManga}>
                Show More
