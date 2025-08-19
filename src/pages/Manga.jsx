@@ -40,7 +40,7 @@ function Manga() {
           )
         }
          {
-              visibleManga > 6 && (
+              visibleManga > 8 && (
                 <button onClick={hideManga}  className="mt-10 px-4 py-2 text-xs font-semibold bg-gray-700 text-white rounded-full shadow-md hover:bg-gray-800 hover:scale-105 border-b-[4px] border-gray-950 transition-all" >
                   Show less
                 </button>

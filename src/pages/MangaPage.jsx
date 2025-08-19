@@ -1,5 +1,4 @@
 import { Link, useParams } from "react-router-dom"
-import { mangaData } from "../../data/mangaData";
 import Comment from "../components/Comment";
 import { useEffect, useState } from "react";
 import axios from "axios";
