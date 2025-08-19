@@ -11,6 +11,7 @@ function MangaPage() {
   const [successNotification,setSuccess] = useState(false);
   const [errorNotification,setError] = useState(false)
   const [review,setReview] = useState(null)
+  const [refresh, setRefresh] = useState(false);
   const [comments,setComments] = useState([])
   const manga = newReviews.find(manga =>manga.id.toString()===id) //we do toString because id from param is a string 
 
@@ -28,7 +29,7 @@ function MangaPage() {
     }
     setSubmitStatus(true)
     try {
-    const response = await axios.post("http://localhost:3000/api/v1/comment/submitreview",{
+    const response = await axios.post("https://sugoi-backend.onrender.com/api/v1/comment/submitreview",{
          mangaID : Number(id),
          comment : review
     })
@@ -36,6 +37,7 @@ function MangaPage() {
    
     if(response.data.success){
      setSuccess(true)
+     setRefresh(prev=>!prev)
     }else{
      setError(true)
     }
@@ -57,7 +59,7 @@ useEffect(() => {
   const fetchReviews = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/v1/comment/getreview/${Number(id)}`
+        `https://sugoi-backend.onrender.com/api/v1/comment/getreview/${Number(id)}`
       );
       setComments(response.data.comments)
     } catch (error) {
@@ -66,7 +68,7 @@ useEffect(() => {
   };
 
   fetchReviews();
-}, [id,handleSubmit]);
+}, [id,refresh]);
 
 
   return (

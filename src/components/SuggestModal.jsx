@@ -14,7 +14,7 @@ function SuggestModal({modal,setModal}) {
       return alert("All input required")
     }
     try {
-      const response = await axios.post("http://localhost:3000/api/v1/suggestion/submitsuggestion",{
+      const response = await axios.post("https://sugoi-backend.onrender.com/api/v1/suggestion/submitsuggestion",{
       mangaName,
       chapterOneUrl
     })
