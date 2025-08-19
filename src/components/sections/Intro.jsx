@@ -23,7 +23,7 @@ function Intro() {
       <div className="relative z-20 flex flex-col justify-center items-center text-center">
         <h1 className="text-6xl md:text-8xl font-semibold">Welcome to SugoiRead</h1>
         <p className="text-xl font-semibold sm:text-lg md:text-xl text-gray-200 mt-4 max-w-md sm:max-w-lg">
-          This is a must read manga list. You won't regret this.
+          This is a must read manga collection. You won't regret this.
         </p>
         <p className="text-sm italic font-semibold sm:text-lg md:text-xl text-gray-200 mt-4 max-w-md sm:max-w-lg">
           Handpicked manga, real fan reviews, and hidden treasures all in one place
