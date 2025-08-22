@@ -103,7 +103,7 @@ useEffect(() => {
          <div className= "flex flex-col max-w-5xl w-full ">
            <div className="dark:text-white/85 mb-5">Reviews : </div>
            {
-            comments.length === 0 ? <div className="mx-auto dark:text-white/40 text-black/40">No reviews yet</div>:<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 space-x-10 space-y-6  mx-auto">
+            comments.length === 0 ? <div className="mx-auto dark:text-white/40 text-black/40">...Loading</div>:<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 space-x-10 space-y-6  mx-auto">
               {
                 comments.slice(0,visible).map((c,index)=>{
                   return(
